@@ -1,0 +1,26 @@
+-- PART A: AND, OR, NOT
+
+--1. Show all sales from NCR where the total_amount is greater than ₱10,000.
+SELECT * FROM sales
+WHERE region = 'NCR' AND total_amount > 10000;
+--RESULTS: 8 ROWS RETURNED
+
+--2. Show all sales from Manila OR Cebu City.
+SELECT * FROM sales
+WHERE city = 'Manila' OR city = 'Cebu City';
+--RESULTS: 18 ROWS RETURNED
+
+--3. Show all sales that are NOT in the Accessories category.
+SELECT * FROM sales
+WHERE NOT category = 'Accessories';
+--RESULTS: 26 ROWS RETURNED 
+
+--4. Show all sales from the Visayas region where the payment method is Credit Card.
+SELECT * FROM sales
+WHERE region = 'Visayas' AND payment_method = 'Credit Card';
+--RESULTS: 4 ROWS RETURNED
+
+--5. Show all sales where the category is 'Electronics' AND the quantity is greater than 1.
+SELECT * FROM sales
+WHERE category = 'Electronics' AND quantity > 1;
+--RESULTS: 1 ROW RETURNED

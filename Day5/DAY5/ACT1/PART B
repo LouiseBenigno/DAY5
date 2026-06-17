@@ -1,0 +1,24 @@
+-- -- --PART B: BETWEEN, IN, LIKE
+
+--6. Show all sales where total_amount is BETWEEN ₱2,000 AND ₱10,000.
+SELECT * FROM sales
+WHERE total_amount BETWEEN 2000 AND 10000;
+--RESULTS: 23 ROWS
+
+--7. Show all sales from Q1 2025 (sale_date BETWEEN '2025-01-01' AND '2025-03-31').
+WHERE sale_date BETWEEN '2025-01-01' AND '2025-03-31';
+--RESULTS: 17 ROWS
+
+--8. Show all sales where the city is IN ('Makati', 'Quezon City', 'Pasig').
+SELECT * FROM sales
+WHERE city IN ('Makati', 'Quezon City', 'Pasig');
+--RESULTS: 19 ROWS
+
+--9. Show all sales where the product_name starts with 'Laptop' (use LIKE).
+WHERE product_name LIKE 'Laptop%';
+--RESULTS: 7 ROWS
+
+--10. Show all sales where the product_name contains 'USB' anywhere in the name.
+SELECT * FROM sales
+WHERE product_name LIKE '%USB%';
+--RESULTS: 6 ROWS

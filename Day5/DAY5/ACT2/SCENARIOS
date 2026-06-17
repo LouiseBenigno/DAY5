@@ -1,0 +1,38 @@
+-- --Scenario 1: Restocking Alert
+
+SELECT *
+FROM inventory
+WHERE quantity_on_hand <= reorder_level
+ORDER BY quantity_on_hand ASC;
+--RESULTS: 4 ROWS
+
+-- --Scenario 2: Regional Sales Analysis
+
+SELECT customer_name, product_name, city, total_amount
+FROM sales
+WHERE region = 'NCR' AND total_amount >= 10000
+ORDER BY total_amount DESC;
+--RESULTS: 8 ROWS
+
+-- --Scenario 3: Customer Outreach
+
+SELECT name, city, total_orders, total_spent
+FROM customers
+WHERE city IN ('Manila', 'Makati', 'Quezon City', 'Pasig')
+AND total_orders > 5;
+
+-- --Scenario 4: Product Search
+
+SELECT item_name, warehouse, quantity_on_hand, unit_cost
+FROM inventory
+WHERE item_name LIKE '%Keyboard%';
+--RESULTS: 1 ROW
+
+-- --Scenario 5: Q2 Payment Analysis
+
+SELECT sale_date, customer_name, product_name, total_amount, payment_method
+FROM sales
+WHERE sale_date BETWEEN '2025-04-01' AND '2025-06-30'
+AND payment_method = 'GCash'
+ORDER BY sale_date;
+--RESULTS: 4 ROWS
